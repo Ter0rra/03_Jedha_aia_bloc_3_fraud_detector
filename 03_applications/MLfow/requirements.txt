@@ -1,0 +1,27 @@
+# =====================================================================
+# Requirements - MLflow pour HuggingFace Spaces
+# =====================================================================
+
+setuptools>=65.0.0
+
+# MLflow
+mlflow==2.16.2 
+gunicorn==21.2.0
+
+# PostgreSQL (Backend Store - remplacement de DuckDB)
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.25
+
+# Cloudflare R2 (Artifacts - S3 compatible)
+boto3==1.34.34
+botocore==1.34.34
+
+# ML Frameworks
+scikit-learn==1.4.0
+pandas==2.2.0
+numpy==1.26.3
+
+# Utilitaires
+python-dotenv==1.0.1
+requests==2.31.0
+pyyaml==6.0.1
