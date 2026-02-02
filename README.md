@@ -27,38 +27,38 @@ Ce projet implémente un **système de détection de fraude bancaire** avec :
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SOURCES DE DONNÉES                           │
-│  Real-Time API → Transactions toutes les 20 secondes           │
+│  Real-Time API → Transactions toutes les 20 secondes            │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    AIRFLOW (Orchestration)                      │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  DAG ETL & Predict (20s)                                 │  │
-│  │  ├─ Extract → Fetch API                                  │  │
-│  │  ├─ Transform → Feature Engineering                      │  │
-│  │  ├─ Load → Save to PostgreSQL                            │  │
-│  │  └─ Predict → Random Forest Classifier                   │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  DAG Weekly Tests                                        │  │
-│  │  └─ Model validation & data quality checks              │  │
-│  └──────────────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  DAG ETL & Predict (20s)                                 │   │
+│  │  ├─ Extract → Fetch API                                  │   │
+│  │  ├─ Transform → Feature Engineering                      │   │
+│  │  ├─ Load → Save to PostgreSQL                            │   │
+│  │  └─ Predict → Random Forest Classifier                   │   │
+│  └──────────────────────────────────────────────────────────┘   │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  DAG Weekly Tests                                        │   │
+│  │  └─ Model validation & data quality checks               │   │
+│  └──────────────────────────────────────────────────────────┘   │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                DATA WAREHOUSE (PostgreSQL)                      │
-│  Tables: transactions | predictions | training_data            │
+│  Tables: transactions | predictions | training_data             │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    APPLICATIONS                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐   │
-│  │  Streamlit   │  │   API REST   │  │  MLflow (dev)      │   │
-│  │  Dashboard   │  │  FastAPI     │  │  Experimentation   │   │
-│  └──────────────┘  └──────────────┘  └────────────────────┘   │
+│  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐     │
+│  │  Streamlit   │  │   API REST   │  │  MLflow (dev)      │     │
+│  │  Dashboard   │  │  FastAPI     │  │  Experimentation   │     │
+│  └──────────────┘  └──────────────┘  └────────────────────┘     │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
