@@ -1,0 +1,46 @@
+fraud_detector/
+.
+├── 00_notebook
+│   └── train_model_RFC.ipynb           # training & search notebook
+├── 01_data                             
+│   ├── csv_path.txt                    # training csv path
+│   └── real_time_API.txt               # real time API path
+├── 02_airflow
+│   ├── config
+│   │   └── airflow.cfg                 # config file for airflow
+│   ├── dags
+│   │   ├── dag_ETL_branch.py           # Principal DAG (ETL & predict) [every 20 seconds]
+│   │   └── dag_weekly_tests.py         # Testing DAG [weekly test]
+│   ├── logs
+│   └── plugins
+├── 03_applications
+│   ├── API                             # API for preprocess & predict out of DAG
+│   │   ├── app.py
+│   │   ├── Dockerfile
+│   │   ├── feature_engineering.py
+│   │   ├── README.md
+│   │   └── requirements.txt
+│   ├── MLfow                           # MLfow for experience & retraining models 
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── requirements.txt
+│   │   └── start.sh
+│   └── Streamlit                       # Dashboard of data on datawarehouse
+│       ├── app.py
+│       ├── Dockerfile
+│       ├── README.md
+│       └── requirements.txt
+├── 04_models                           # local model and preprocessor (legacy)
+│   ├── fraud_model.pkl
+│   └── preprocessor.pkl
+├── 05_script                           # script for init database & push for model and preprocessor to HF_model
+│   ├── add_model.py
+│   └── init_db_v2.py
+├── .env.example                        # example of environnement variables
+├── .gitignore                          # file for ignore some file to push on github 
+├── structure.txt                       # <= this file
+├── docker-compose.yaml                 
+├── Dockerfile
+├── LICENSE
+├── README.md
+└── requirements.txt
