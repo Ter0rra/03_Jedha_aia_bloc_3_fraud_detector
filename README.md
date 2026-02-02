@@ -459,6 +459,6 @@ Pour toute question ou problème :
 
 **⭐ N'oubliez pas de star le projet si vous le trouvez utile ! ⭐**
 
-Made with ❤️ by Terorra | Projet Certification MLOps 2024
+Made with ❤️ by Terorra | Projet Certification MLOps 2026
 
 </div>
