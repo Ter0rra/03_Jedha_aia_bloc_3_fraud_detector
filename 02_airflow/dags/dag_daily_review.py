@@ -55,7 +55,7 @@ def extract_daily_data(**context):
             FROM pred pd
             INNER JOIN train_d td 
                 ON td.trans_num = pd.trans_num
-            WHERE td.created_at >= CURRENT_DATE - INTERVAL '6 day'
+            WHERE td.created_at >= CURRENT_DATE - INTERVAL '1 day'
             AND td.created_at < CURRENT_DATE;
         """
     
@@ -155,7 +155,7 @@ def send_report(**context):
     - Légitimes: {(df['is_fraud'] == 0).sum()}
     - Taux de fraude: {df['is_fraud'].mean():.2%}
 
-    Période: 6 derniers jours
+    Période:  dernières 24 heures
     Fichier CSV en pièce jointe.
 
     ---
